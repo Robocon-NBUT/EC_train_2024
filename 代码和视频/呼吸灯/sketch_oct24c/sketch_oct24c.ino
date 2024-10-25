@@ -10,7 +10,7 @@ void loop() {
   analogWrite(ledPin, brightness);
   brightness = brightness + speed;
 
-  if (brightness <= 0 || brightness >= 255) {
+  if (brightness <= 0 || brightness >= 200) {
     speed = -speed;
   }
 
