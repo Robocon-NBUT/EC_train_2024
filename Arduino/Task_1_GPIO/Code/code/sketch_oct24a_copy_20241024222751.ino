@@ -1,5 +1,3 @@
-# code 
-```c 
 void setup() {
   pinMode(13,OUTPUT);//设置引脚13为输出
   pinMode(9,OUTPUT);//设置引脚9为输出
