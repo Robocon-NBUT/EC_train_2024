@@ -1,11 +1,15 @@
 void setup() {
-  pinMode(3, INPUT); 
-  pinMode(9, OUTPUT);
-  pinMode(4, OUTPUT);
+  pinMode(5,OUTPUT);
+  pinMode(13,OUTPUT);
 }
 
 void loop() {
-  digitalWrite(4, HIGH);
-  int open = digitalRead(3); 
-  digitalWrite(9, open);
+  for(int i=0;i < 200;i ++) {
+    analogWrite(5,i);
+    delay(15);
+  }
+  for(int i=200;i > 0;i --) {
+    analogWrite(5,i);
+    delay(15);
+  }
 }
