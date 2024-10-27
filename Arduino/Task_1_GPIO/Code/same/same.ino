@@ -9,9 +9,11 @@ void setup() {
 void loop() {
   digitalWrite(3,HIGH);
   digitalWrite(9,HIGH);
+  digitalWrite(11,HIGH);
   delay(1000);
   digitalWrite(3,LOW);
   digitalWrite(9,LOW);
+  digitalWrite(11,LOW);
   delay(1000);
   // put your main code here, to run repeatedly:
 
