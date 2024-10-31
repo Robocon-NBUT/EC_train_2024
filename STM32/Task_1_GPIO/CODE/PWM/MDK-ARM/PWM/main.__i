@@ -1,0 +1,5 @@
+--c99 --gnu -c --cpu Cortex-M7.fp.dp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include
+-I.\RTE\_PWM
+-I"D:\keil packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include"
+-D__UVISION_VERSION="540" -DSTM32H750xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H750xx
+-o pwm\main.o --omf_browse pwm\main.crf --depend pwm\main.d "../Core/Src/main.c"
