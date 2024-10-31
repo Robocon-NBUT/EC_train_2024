@@ -1,5 +1,5 @@
 void setup() {
-  pinMode(3,INTPUT);//设置引脚3为输入
+  pinMode(3,INPUT);//设置引脚3为输入
   pinMode(9,OUTPUT);//设置引脚9为输出
 }
 
