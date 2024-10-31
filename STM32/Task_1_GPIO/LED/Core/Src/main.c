@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "memorymap.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -98,32 +99,16 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+		
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		
-		
-	
-    
-		
-		
-		
 		HAL_GPIO_WritePin(GPIOE,GPIO_PIN_3,1);
-			HAL_GPIO_WritePin(GPIOB,GPIO_PIN_10,1);
-			HAL_GPIO_WritePin(GPIOE,GPIO_PIN_14,1);
-			HAL_GPIO_WritePin(GPIOE,GPIO_PIN_15,1);
-		HAL_Delay(1000);
-    HAL_GPIO_WritePin(GPIOE,GPIO_PIN_3,0);
-					HAL_GPIO_WritePin(GPIOB,GPIO_PIN_10,0);
-			HAL_GPIO_WritePin(GPIOE,GPIO_PIN_14,0);
-			HAL_GPIO_WritePin(GPIOE,GPIO_PIN_15,0);
-		HAL_Delay(1000);
+		HAL_Delay(500);
+		HAL_GPIO_WritePin(GPIOE,GPIO_PIN_3,0);
+		HAL_Delay(500);
 		
-		
-		
-		
-		
-		
+
   }
   /* USER CODE END 3 */
 }
