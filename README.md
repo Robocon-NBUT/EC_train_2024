@@ -5,3 +5,5 @@ Training tasks for electronic control of 24gen members.
 # Tasks
 ## [Arduino](Arduino/README.md)
 [Task 1 GPIO](Arduino/Task_1_GPIO/)
+## [STM32](STM32/README.md)
+[Task 1 GPIO](STM32/Task_1_GPIO/)
