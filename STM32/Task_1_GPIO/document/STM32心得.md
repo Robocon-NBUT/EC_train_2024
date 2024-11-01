@@ -1,7 +1,7 @@
 #
 <center><font face ="楷体" size=300> STM32</font></center>
 
-<center><font  face="楷体" size=5>报账组——谭尧瑞 黄广松</font></center>
+<center><font  face="楷体" size=5>——谭尧瑞 黄广松</font></center>
 <font face="楷体" size=5>一：知识层面
 
 1.在对Arduino的基础上有了不一样的见解，由简单到入门，由表及里，对开发板有了更深刻的理解对烧录有了更深入的见解。拓宽了我们的眼界丰富了我们的知识。
