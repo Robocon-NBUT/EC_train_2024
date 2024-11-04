@@ -1,0 +1,36 @@
+//点灯
+//setup是初始化函数
+void setup() {
+pinMode(13,output);//pinMode是Arduino提供的库，用于设置引脚输入输出状态
+}
+//loop是循环函数
+void loop() {
+digitalWrite(13,HIGH);//digitalWrite是Arduino提供的库，用于设置输出引脚的高低电平均状态
+delay(500);//delay是Arduino提供的库，用于设置占用单片机的时间，即延迟
+dugitalWrite(13,low);
+delay(500);
+}
+//steup和loop函数一定要有，空的也可以，不然会报错
+
+
+//呼吸灯
+void setup()
+{
+  pinMode(3,OUTPUT);
+  pinMode(13,OUTPUT);
+}
+void loop()
+{
+  for(int i = 0; i <= 100;i++)   //使用for循环将i从0逐渐加到100
+  {
+    analogWrite(13, i);  //将i的数值写入13号针脚
+    analogWrite(3, i);
+    delay(5);  //延时5毫秒
+  }
+  for(int i = 100; i >= 0; i--)   //使用for循环将i从100逐渐减到0
+  {
+    analogWrite(13, i);
+    analogWrite(3, i);  //将i的数值写入3号针脚
+    delay(5);  //延时5毫秒
+  }
+}

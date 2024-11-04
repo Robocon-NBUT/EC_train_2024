@@ -1,13 +1,8 @@
-# Target 
-GPIO: INPUT OUTPUT and PWM
-# Task
-## OUTPUT
-Let the led on board toggle in 1hz.
-## INPUT
-Sync led status with another digital pin.
-## PWM
-Breathing light.
-# Require
-Submit your codes, videos and documents. Each video must smaller than 30MB. And the documents must be the type of markdown.
-# Note
-Pin 9 is led pin.
+# What is arduino
+**使用广泛的开源电子开发平台**
+# WHAT I LEARNT
+**I learnt how to use Arduino to lighting a LED**
+# WHY I TO LEARN
+**To take a basic understanding of Arduino and i have intreset in using SCM**
+# HOW I lEARN  
+**By using CSDN and communicating with classmates**
