@@ -100,8 +100,10 @@ int main(void)
   while (1)
   {
 		
-		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_6);
-    HAL_Delay(500);
+HAL_GPIO_wiritePin(GPIOC, GPIO_PIN_6，GPIO_set);
+HAL_Delay(500);
+HAL_GPIO_wiritePin(GPIOC, GPIO_PIN_6，GPIO_reset);
+HAL_Delay(500);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
