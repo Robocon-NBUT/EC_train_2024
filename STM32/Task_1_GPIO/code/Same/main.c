@@ -99,12 +99,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		HAL_GPIO_WritePin(GPIOE,GPIO_PIN_3,1);
-        HAL_GPIO_WritePin(GPIOE,GPIO_PIN_4,1);
+		HAL_GPIO_WritePin(GPIOE,GPIO_PIN_3,GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOE,GPIO_PIN_4,GPIO_PIN_SET);
         HAL_Delay(500);
         
-        HAL_GPIO_WritePin(GPIOE,GPIO_PIN_3,0);
-        HAL_GPIO_WritePin(GPIOE,GPIO_PIN_4,0);
+        HAL_GPIO_WritePin(GPIOE,GPIO_PIN_3,GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(GPIOE,GPIO_PIN_4,GPIO_PIN_RESET);
         HAL_Delay(500);
     /* USER CODE END WHILE */
 
