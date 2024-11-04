@@ -98,16 +98,9 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
-  {
-		HAL_GPIO_WritePin(GPIOE,GPIO_PIN_3,GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOE,GPIO_PIN_4,GPIO_PIN_SET);
-		
-		HAL_Delay(500);
-		
-		HAL_GPIO_WritePin(GPIOE,GPIO_PIN_3,GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOE,GPIO_PIN_4,GPIO_PIN_RESET);
-		
-		HAL_Delay(500);
+  {GPIO_PinState pin5_state = HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_5);
+
+        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_4, pin5_state);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
