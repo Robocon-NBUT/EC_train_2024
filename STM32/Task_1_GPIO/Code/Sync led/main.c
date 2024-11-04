@@ -102,12 +102,12 @@ int main(void)
 		
 		
 		HAL_GPIO_WritePin(GPIOE,GPIO_PIN_5,1);
-		int a=HAL_GPIO_ReadPin(GPIOE,GPIO_PIN_3);
-			HAL_GPIO_WritePin(GPIOE,GPIO_PIN_6,a);
+		int voltage=HAL_GPIO_ReadPin(GPIOE,GPIO_PIN_3);
+			HAL_GPIO_WritePin(GPIOE,GPIO_PIN_6,voltage);
 		HAL_Delay (500);
 		HAL_GPIO_WritePin(GPIOE,GPIO_PIN_5,0);
 		 a=HAL_GPIO_ReadPin(GPIOE,GPIO_PIN_3);
-			HAL_GPIO_WritePin(GPIOE,GPIO_PIN_6,a);
+			HAL_GPIO_WritePin(GPIOE,GPIO_PIN_6,voltage);
 		HAL_Delay (500);
 		
     /* USER CODE END WHILE */
