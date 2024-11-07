@@ -1,52 +1,93 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2024 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2024 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "memorymap.h"
+#include "tim.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-void transmit(char c)
-{
-  HAL_GPIO_WritePin(TX_GPIO_Port,TX_Pin,GPIO_PIN_RESET);
-  HAL_Delay(1);
-  for (size_t i = 0; i < 8; i++)
-  {
-    if (c&0x01)
-    {
-      HAL_GPIO_WritePin(TX_GPIO_Port,TX_Pin,GPIO_PIN_SET);
-    }
-    else
-    {
-      HAL_GPIO_WritePin(TX_GPIO_Port,TX_Pin,GPIO_PIN_RESET);
-    }
-    c=c>>1;
-    HAL_Delay(1);
-  }
-  HAL_GPIO_WritePin(TX_GPIO_Port,TX_Pin,GPIO_PIN_SET);
-  HAL_Delay(1);
-}
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+volatile uint32_t delay_counter =0;
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  if (htim->Instance==TIM2)
+  {
+    delay_counter++;
+    HAL_GPIO_TogglePin(LED_GPIO_Port,LED_Pin);
+  }
+  
+}
+size_t isji(char c)
+{
+    int count = 0;
+    for (size_t i = 0; i < 8; i++)
+    {
+        if (c & 0x01) 
+        {
+            count++;
+        }
+        c = c >> 1;
+    }
+    return (count % 2 == 1) ? 1 : 0;  // 如果 "1" 的数量是奇数，则返回 1
+}
+
+void my_delay(volatile uint32_t us)
+{
+  delay_counter = 0;
+  while (delay_counter < us);
+}
+void transmit(char c)
+{
+  char origin_c=c;
+  HAL_GPIO_WritePin(TXUP_GPIO_Port, TXUP_Pin, GPIO_PIN_RESET);
+  my_delay(1);
+  for (size_t i = 0; i < 8; i++)
+  {
+    if (c & 0x01)
+    {
+      HAL_GPIO_WritePin(TXUP_GPIO_Port, TXUP_Pin, GPIO_PIN_SET);
+    }
+    else
+    {
+      HAL_GPIO_WritePin(TXUP_GPIO_Port, TXUP_Pin, GPIO_PIN_RESET);
+    }
+    c = c >> 1;
+    my_delay(1);
+  }
+  if (isji(origin_c))
+  {
+    HAL_GPIO_WritePin(TXUP_GPIO_Port, TXUP_Pin, GPIO_PIN_SET);
+  }
+  else
+  {
+    HAL_GPIO_WritePin(TXUP_GPIO_Port, TXUP_Pin, GPIO_PIN_RESET);
+  }
+  my_delay(1);
+  HAL_GPIO_WritePin(TXUP_GPIO_Port, TXUP_Pin, GPIO_PIN_SET);
+  my_delay(1);
+}
 
 /* USER CODE END PTD */
 
@@ -110,8 +151,10 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-  char str[13]="hello world\0";
+  HAL_TIM_Base_Start_IT(&htim2);
+  char str[13] = "hello world\0";
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -122,6 +165,7 @@ int main(void)
     {
       transmit(str[i]);
     }
+    HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -155,12 +199,12 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLM = 5;
-  RCC_OscInitStruct.PLL.PLLN = 48;
+  RCC_OscInitStruct.PLL.PLLM = 2;
+  RCC_OscInitStruct.PLL.PLLN = 32;
   RCC_OscInitStruct.PLL.PLLP = 2;
   RCC_OscInitStruct.PLL.PLLQ = 2;
   RCC_OscInitStruct.PLL.PLLR = 2;
-  RCC_OscInitStruct.PLL.PLLRGE = RCC_PLL1VCIRANGE_2;
+  RCC_OscInitStruct.PLL.PLLRGE = RCC_PLL1VCIRANGE_3;
   RCC_OscInitStruct.PLL.PLLVCOSEL = RCC_PLL1VCOWIDE;
   RCC_OscInitStruct.PLL.PLLFRACN = 0;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
@@ -181,7 +225,7 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_APB2_DIV2;
   RCC_ClkInitStruct.APB4CLKDivider = RCC_APB4_DIV2;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
   {
     Error_Handler();
   }
