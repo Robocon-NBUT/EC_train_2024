@@ -6,9 +6,9 @@
 Stm32 IO模拟串口教程：https://blog.csdn.net/TonyIOT/article/details/82502953   
 
 ## 接收端串口参数
- - 波特率：500
- - 字长8位
- - 无奇偶校验位
+ - 波特率：115200
+ - 字长9位（包括校验位）
+ - 奇校验
  - 1位停止位
  - RX：PB15
  - 低位在前
@@ -26,6 +26,8 @@ void transmit(char c){
         c = c>>1;//右移一位，准备传输下一个bit
         delay();
     }
+    send_parity();//发送校验位
+    delay();
     set_data_high();//结束
     delay();
 }
