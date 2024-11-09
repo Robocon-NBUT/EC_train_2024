@@ -44,9 +44,9 @@ uint8_t jiaoyan = 0; //校验值
 volatile int head = 0;            // 缓冲区头指针
 volatile int tail = 0;            // 缓冲区尾指针
 volatile int yessend = 0;         // 标记当前是否正在发送
-#define size 999          				// 定义缓冲区大小
-uint8_t zijie = 0 ;                     //存字节的变量
-uint8_t index = 0 ;                  //存索引的
+#define size 999          	  // 定义缓冲区大小
+uint8_t zijie = 0 ;               //存字节的变量
+uint8_t index = 0 ;               //存索引的
 char quene[size];
 /* USER CODE END PD */
 
@@ -136,7 +136,7 @@ int main(void)
 
   /* USER CODE BEGIN SysInit */
 
-	   HAL_GPIO_WritePin(TX_GPIO_Port, TX_Pin, GPIO_PIN_SET);		//初始高电平，后面变成低电平开始发送	
+  HAL_GPIO_WritePin(TX_GPIO_Port, TX_Pin, GPIO_PIN_SET);		//初始高电平，后面变成低电平开始发送	
 	
   /* USER CODE END SysInit */
 
@@ -145,17 +145,17 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
 
-		while(1)
-		{
-	     if(cansend == 1)
-					{		
-						cansend=0;//重置指示器
-						for (int i = 0; i < 13; i++) 
-            {
-                send(d[i]); // 逐位把字符存入缓冲区
-            }
-					}
-		}
+  while(1)
+  {
+    if(cansend == 1)
+    {		
+       cansend=0;//重置指示器
+       for (int i = 0; i < 13; i++) 
+       {
+           send(d[i]); // 逐位把字符存入缓冲区
+       }
+     }
+   }
   /* USER CODE END 2 */
 
   /* Infinite loop */
