@@ -4,3 +4,7 @@
 ## 整合能力还不行，问题需要ai帮助才能理解哪里出了问题
 # 对考核的感受
 ## 巨难，到现在都比较麻木，跨度有点大
+
+
+https://github.com/user-attachments/assets/a0b75c80-9bef-46c1-ac7a-649ac3929798
+
