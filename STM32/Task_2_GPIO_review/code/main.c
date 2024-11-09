@@ -63,7 +63,7 @@ void transmit(char c)
 {
   uint8_t original_c = c;
   int count = 0;
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET); 
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET); 
   delay_us(1);
   for (int i = 0; i < 8; i++) 
   {
@@ -71,7 +71,7 @@ void transmit(char c)
     {
 			
 			
-      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
 			
 			
     }
@@ -79,7 +79,7 @@ void transmit(char c)
     {
 			
 			
-      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET); 
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET); 
 			
 			
 			
@@ -90,7 +90,7 @@ void transmit(char c)
 
   judge_odd(original_c);  
 	
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET); 
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET); 
 	
   delay_us(1);
 }
@@ -135,14 +135,14 @@ void judge_odd(char c)
   if (count % 2 == 0)
 		
   {
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);  
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);  
 		
 		
   }
   else
   {
 		
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);  
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);  
 		
   }
   delay_us(1);
@@ -187,14 +187,17 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 HAL_TIM_Base_Start_IT(&htim2);
-  __enable_irq(); 
+  __enable_irq();  char arr[15]="\0hello world\0";
+for(int i=0;i<15;i++){
+		transmit(arr[i]);
+		}
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
+    /* USER CODE END WHILE */ 
 
     /* USER CODE BEGIN 3 */
   }
