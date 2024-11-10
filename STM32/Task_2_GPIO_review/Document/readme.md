@@ -8,3 +8,7 @@
 
 目前对于电控专业知识的了解仍然处于一个较为浅显的状态，希望再接再厉。
 
+
+
+https://github.com/user-attachments/assets/53f7e6b2-da14-4230-97bf-0eaf472f8d9a
+
