@@ -48,7 +48,7 @@ STM32 提供了 HAL 库，使得串口的配置变得更加简单。使用 HAL �
 
 
 
-### 3. 在 `main.c` 中使用串口
+### 3. `main.c` 使用串口
 
 在生成的代码中，找到 `HAL_UART_Transmit()` 和 `HAL_UART_Receive()` 函数，分别用于发送和接收数据。
 
