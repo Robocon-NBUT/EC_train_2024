@@ -1,6 +1,6 @@
 # 什么是串口
-## 什么是虚拟串口 ？教会了我时钟的调配
-串口（Universal Asynchronous Receiver/Transmitter，简称 UART）是一种常见的通信协议，用于在计算机与外部设备之间传输数据。UART 是一种**异步**通信协议，意味着数据的发送与接收不依赖于共同的时钟信号，而是通过双方预设的波特率来同步数据传输。
+## 什么是虚拟串口 ？
+串口是一种常见的通信协议，用于在计算机与外部设备之间传输数据。UART 是一种**异步**通信协议，意味着数据的发送与接收不依赖于共同的时钟信号，而是通过双方预设的波特率来同步数据传输。
 而虚拟串口不需要相同波特率
 
 ## 总结
@@ -12,3 +12,10 @@
 
 ## 收获
 stm32中串口有3种方式（目前学习的），有硬件串口，软件模拟串口，usbcdc串口
+
+## HELLO WORLD
+https://github.com/user-attachments/assets/d8a2f1d2-7a56-48d2-a27f-70af413867fa
+
+## 复读机
+https://github.com/user-attachments/assets/52202129-a90e-4daf-ac06-3ddfe004eba8
+
