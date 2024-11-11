@@ -5,4 +5,8 @@
 # 问题
 * 还无法有效解决抖动问题
 * 定时器精度还有微小误差
-https://github.com/user-attachments/assets/47018b3d-dbac-40a0-aaa1-d63dd98e594a
+
+
+
+https://github.com/user-attachments/assets/864b4041-040f-4c7c-a0bb-755a76f1e7ca
+
