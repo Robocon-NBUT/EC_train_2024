@@ -76,9 +76,9 @@ static void MPU_Config(void);
 extern TIM_HandleTypeDef htim3;
 
 /**
- * @brief  计算奇偶校验位（奇校验）
- * @param  data: 要计算的字节
- * @retval 校验位（0 或 1）
+ * @brief 
+ * @param  
+ * @retval 
  */
 uint8_t calculateParity(uint8_t data) {
     uint8_t count = 0;
@@ -91,15 +91,15 @@ uint8_t calculateParity(uint8_t data) {
 }
 
 /**
- * @brief  发送一个字符的函数（非阻塞）
- * @param  c: 要发送的字符
+ * @brief 
+ * @param 
  */
 void send(char c) {
   
         currentData = c;
         bitIndex = 0;
         sendState = START_BIT;
-        HAL_TIM_Base_Start_IT(&htim3); // 启动定时器中断
+        HAL_TIM_Base_Start_IT(&htim3); 
     
 }
 /* USER CODE END 0 */
@@ -124,7 +124,6 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  /* 初始化发送状态 */
   sendState = IDLE;
   Index = 0;
   /* USER CODE END Init */
@@ -133,7 +132,6 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-  /* 将发送引脚初始化为高电平（空闲状态） */
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
   /* USER CODE END SysInit */
 
@@ -142,10 +140,8 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
 
-  /* 初始化发送引脚为高电平 */
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
 
-  /* 发送第一个字符 */
   send(str[Index]);
   Index++;
 
@@ -155,8 +151,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-      // 主循环中无需执行任何操作，发送由定时器回调控制
-      // 如果需要，可以在这里添加其他任务
+      
   }
     /* USER CODE END WHILE */
 
@@ -228,12 +223,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     if (htim->Instance == TIM3) {
         switch (sendState) {
             case START_BIT:
-                // 发送起始位（0）
                 HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);
                 sendState = DATA_BITS;
                 break;
             case DATA_BITS:
-                // 发送数据位
                 HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, (currentData >> bitIndex) & 0x01 ? GPIO_PIN_SET : GPIO_PIN_RESET);
                 bitIndex++;
                 if (bitIndex >= 8) {
@@ -242,21 +235,17 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
                 }
                 break;
             case PARITY_BIT:
-                // 发送奇偶校验位
                 HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, parityBit ? GPIO_PIN_SET : GPIO_PIN_RESET);
                 sendState = STOP_BIT;
                 break;
             case STOP_BIT:
-                // 发送停止位（1）
                 HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
                 sendState = IDLE;
 
-                // 发送下一个字符
-                if (Index < strlen(str)) { // -1 排除空字符
+                if (Index < strlen(str)) { 
                     send(str[Index]);
                     Index++;
                 } else {
-                    // 所有字符发送完毕，停止定时器
                     HAL_TIM_Base_Stop_IT(&htim3);
                 }
                 break;
@@ -299,13 +288,12 @@ void MPU_Config(void)
 }
 
 /**
-  * @brief  This function is executed in case of error occurrence.
-  * @retval None
+  * @brief  
+  * @retval 
   */
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* 用户可以添加自己的实现来报告 HAL 错误返回状态 */
   __disable_irq();
   while (1)
   {
@@ -324,8 +312,7 @@ void Error_Handler(void)
 void assert_failed(uint8_t *file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
-  /* 用户可以添加自己的实现来报告文件名和行号,
-     例如: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
