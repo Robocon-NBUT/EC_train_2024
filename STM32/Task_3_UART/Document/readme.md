@@ -27,3 +27,14 @@ USB_DEVICE：选择 CDC (VPC)
 usb系统时钟设为48mhz      
 生成工程          
 进行代码编写
+
+
+
+https://github.com/user-attachments/assets/389fa15e-97f4-4232-9d27-7fd7ce7db421
+
+
+
+https://github.com/user-attachments/assets/3309ec2e-bddf-4c93-9803-b9bfc8253009
+
+
+
