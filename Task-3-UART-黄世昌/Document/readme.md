@@ -50,17 +50,11 @@ STM32 提供了 HAL 库，使得串口的配置变得更加简单。使用 HAL �
 
 ### 3. 在 `main.c` 中使用串口
 
-在生成的代码中，找到 `HAL_UART_Transmit()` 和 `HAL_UART_Receive()` 函数，分别用于发送和接收数据。例如：
+在生成的代码中，找到 `HAL_UART_Transmit()` 和 `HAL_UART_Receive()` 函数，分别用于发送和接收数据。
 
-```c
-uint8_t data[] = "Hello World\n";
-HAL_UART_Transmit(&huart1, data, sizeof(data) - 1, HAL_MAX_DELAY);  // 发送数据
-
-uint8_t buffer[10];
-HAL_UART_Receive(&huart1, buffer, sizeof(buffer), HAL_MAX_DELAY);  // 接收数据
+https://github.com/user-attachments/assets/f10ad299-59fb-4eb4-a7fe-a0c7201ee78e
 
 
+https://github.com/user-attachments/assets/b5452322-107c-49ab-b4f4-4368fd9ead94
 
 
-https://github.com/user-attachments/assets/1590ba3d-9fa8-4a73-a122-383cb94b70fd
-https://github.com/user-attachments/assets/bf68058e-6122-4969-8f1c-1fef08f7ec33
