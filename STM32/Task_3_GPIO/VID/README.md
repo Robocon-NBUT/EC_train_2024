@@ -11,3 +11,7 @@
 * 主板RT连接收端RX，主板RX连发出端RT
 # 如何使用stm32的usb虚拟串口(usb-cdc vcp)
 * 下载驱动后连接主板上的typ_c
+
+
+https://github.com/user-attachments/assets/e96ed122-9d08-4bcc-b176-3dda551be7a0
+
