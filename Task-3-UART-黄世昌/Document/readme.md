@@ -60,9 +60,7 @@ uint8_t buffer[10];
 HAL_UART_Receive(&huart1, buffer, sizeof(buffer), HAL_MAX_DELAY);  // 接收数据
 
 
-https://github.com/user-attachments/assets/06a0d563-0006-425e-ba97-832f57786757
 
 
-
-https://github.com/user-attachments/assets/f30e7562-f3cf-4d0c-a23c-09e897c34d35
-
+https://github.com/user-attachments/assets/1590ba3d-9fa8-4a73-a122-383cb94b70fd
+https://github.com/user-attachments/assets/bf68058e-6122-4969-8f1c-1fef08f7ec33
