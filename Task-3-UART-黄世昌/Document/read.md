@@ -58,3 +58,11 @@ HAL_UART_Transmit(&huart1, data, sizeof(data) - 1, HAL_MAX_DELAY);  // 发送数
 
 uint8_t buffer[10];
 HAL_UART_Receive(&huart1, buffer, sizeof(buffer), HAL_MAX_DELAY);  // 接收数据
+
+
+https://github.com/user-attachments/assets/06a0d563-0006-425e-ba97-832f57786757
+
+
+
+https://github.com/user-attachments/assets/f30e7562-f3cf-4d0c-a23c-09e897c34d35
+
