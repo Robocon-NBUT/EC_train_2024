@@ -6,3 +6,7 @@
 //3:奇校验：将各个位上的1相加在取余2判断是否加1
 //最后输出
 //目前我尝试了许多种方式都没能是小灯亮起来，在之后也会继续尝试
+
+
+https://github.com/user-attachments/assets/a3f7ee69-d6e1-457b-bc1c-0afcec1a3645
+
