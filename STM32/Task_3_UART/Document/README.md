@@ -1,2 +1,6 @@
 # usb虚拟串口任务心得
 这一次的任务比较的简单所以我花了很快的时间就了解了要学的内容在强大的互联网的支持下让我的学习效率提高了不少
+
+
+https://github.com/user-attachments/assets/9ba77a73-c4a7-4dbe-a5b3-d5dcb0812ed4
+
