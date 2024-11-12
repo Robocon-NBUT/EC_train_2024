@@ -16,6 +16,8 @@
     - 一：使能 USB 时钟和相关 USB 外设。通过__HAL_RCC_USB_CLK_ ENABLE();函数使能 USB 时钟。然后使用MX_USB_DEVICE _Init()函数
     - 二：配置 USB - CDC 相关参数
     - 三：实现 USB - CDC 接口函数
+## 心得
+  - 这次任务偏向简单，通过此次任务我学会了usbcdc串口的使用方法。
 ## 任务要求
  - 将调试器串口与stm32相连，stm32向电脑输出"Hello world" 30%
  - 复读机，上位机发送什么就回复什么 30%
