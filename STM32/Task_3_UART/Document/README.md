@@ -22,3 +22,10 @@
  - 将调试器串口与stm32相连，stm32向电脑输出"Hello world" 30%
  - 复读机，上位机发送什么就回复什么 30%
  - 使用usb cdc实现上述功能 40%
+
+https://github.com/user-attachments/assets/4da96b2a-23f3-4f68-b723-8ff7cc0b9d18
+
+
+
+https://github.com/user-attachments/assets/4fb6cee7-1abb-4d18-8dbc-21290d822659
+
