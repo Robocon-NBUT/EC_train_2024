@@ -17,3 +17,10 @@
 
 通过usbd_conf.c等底层文件进行编写，CDC_Transmit_FS的使用。
 USB是轮询机制，间隔最小1ms，按包传输。要求我们输出字符串时要进行延时。
+
+https://github.com/user-attachments/assets/41071302-f7d9-4550-8499-6f664e745e37
+
+
+
+https://github.com/user-attachments/assets/f599671d-d779-49fa-be26-7491be4091de
+
