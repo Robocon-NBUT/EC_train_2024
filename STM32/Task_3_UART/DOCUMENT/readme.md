@@ -33,3 +33,12 @@
     - USB CDC配置：
         - 学习了如何在STM32上配置USB CDC，并使用HAL库来发送和接收数据。
         - 实现了使用USB CDC发送"Hello world"和复读机功能，加深了对USB通信协议的理解。
+
+
+
+https://github.com/user-attachments/assets/4e29e2a0-d0b4-4944-896a-047cef739d94
+
+https://github.com/user-attachments/assets/88873baa-ff81-498c-a3c8-641e0faadcf8
+
+
+
