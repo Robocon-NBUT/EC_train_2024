@@ -17,3 +17,10 @@ Tx与Rx相连
 stm32中设置usb-otg-fs为Device_Only
 再设置usb_Device
 调整usb时钟为48mhz
+
+https://github.com/user-attachments/assets/2b54bba4-50a1-4ab8-b89c-e97550c7b6a2
+
+
+
+https://github.com/user-attachments/assets/32371f83-cf4b-4f26-9029-b502bed5afce
+
