@@ -5,3 +5,11 @@
 异步串口没有时钟信号的限制，适合长距离通信，但数据速率相对较低。
 会基本的操纵使用HAL库配置stm32上的串口，了解usb串口的特点与作用，以及如何简单使用usb串口
 会基本操纵usb上面的虚拟串口上的简单功能，综合来说这次总体难度不大，希望自己对这些基本的操纵能够熟练掌握。
+
+
+https://github.com/user-attachments/assets/3dde26a0-8cd9-4dce-bc11-fad6468bb612
+
+
+
+https://github.com/user-attachments/assets/5a82a662-0689-43c3-b02e-f38af8428751
+
