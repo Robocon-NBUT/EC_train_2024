@@ -17,3 +17,11 @@
  -  将调试器的 TX 引脚连接到 STM32 的 RX 引脚，调试器的 RX 引脚连接到 STM32 的 TX 引脚，并且连接好 GND 引脚。软件上，在电脑的串口调试助手中选择正确的串口，并设置和 STM32 串口相同的参数来进行通信
 # 如何使用stm32的usb虚拟串口(usb-cdc vcp)
  - 在 STM32CubeMX 中配置 USB - CDC 组件，将 STM32 通过 USB 线连接到电脑，在电脑上打开串口调试助手选择该虚拟串口并设置参数.
+
+
+https://github.com/user-attachments/assets/9fdccafb-1973-4372-a1c8-1886714a0a67
+
+
+
+https://github.com/user-attachments/assets/26309908-435f-4b6c-b754-7b748f6a90fb
+
