@@ -110,9 +110,23 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+		
     /* USER CODE BEGIN 3 */
+		if (LL_USART_IsActiveFlag_RXNE(USART1))
+		{
+			for(uint8_t i = 0; i<3;i++)
+			{
+				while (!LL_USART_IsActiveFlag_RXNE(USART1));
+				Rx_Buffer[i] = LL_USART_ReceiveData8(USART1);
+			}
+			Rx_State = 1;
+			LL_USART_TransmitData8(USART1,Rx_Buffer[0]);
+			LL_USART_TransmitData8(USART1,Rx_Buffer[1]);
+			LL_USART_TransmitData8(USART1,Rx_Buffer[2]);
+			
 		}
+		
+	}
   /* USER CODE END 3 */
 }
 
