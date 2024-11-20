@@ -43,3 +43,13 @@ General Call Mode:
    - [使用SPI控制st7789]调用相应函数
  - 在oled屏幕上显示 姓名 50%
  - 在lcd屏幕上显示qq头像 50%
+
+
+https://github.com/user-attachments/assets/c90b99cd-c35a-4c72-92fd-9bf8b79edec2
+
+
+
+https://github.com/user-attachments/assets/8bccbac9-4f9a-4c39-b131-0068b6c599f5
+
+
+ - 
