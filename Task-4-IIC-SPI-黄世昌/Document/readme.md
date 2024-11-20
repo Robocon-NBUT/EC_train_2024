@@ -51,3 +51,6 @@ SPI协议使用时钟同步传输数据，在每一个时钟脉冲的上升沿�
 
 - **IIC**：适合用于低速、短距离、设备数量较多的通信场景，具有简单的两线制设计。但在传输速度和带宽上不如SPI。
 - **SPI**：适合高速、大数据量传输，支持全双工通信，能够提供更高的传输速度。缺点是需要更多的信号线，且在设备数量较多时需要额外的片选信号。
+
+![0ce2c6a2449a71d1cd74d10f8f0d707](https://github.com/user-attachments/assets/977a6d19-f43c-41d6-b86e-6dc9b557d737)
+![d02c40bd65790daad38f40b5b96d955](https://github.com/user-attachments/assets/89a77d66-0303-453a-849a-2be74b295408)
