@@ -44,12 +44,11 @@ General Call Mode:
  - 在oled屏幕上显示 姓名 50%
  - 在lcd屏幕上显示qq头像 50%
 
-
-https://github.com/user-attachments/assets/c90b99cd-c35a-4c72-92fd-9bf8b79edec2
-
-
-
 https://github.com/user-attachments/assets/8bccbac9-4f9a-4c39-b131-0068b6c599f5
+
+
+https://github.com/user-attachments/assets/ca62b8e9-5acf-4a1a-ba6f-984d825b81dd
+
 
 
  - 
