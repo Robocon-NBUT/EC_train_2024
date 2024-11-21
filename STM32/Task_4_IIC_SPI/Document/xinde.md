@@ -25,3 +25,5 @@
 主设备结束传输后，从设备释放 MISO。  
 ## 3图像
 在显示图片和文字中还学会了RGB565这一种颜色特殊的编码模式让我对计算机有了更深入的了解
+![微信图片_20241121154854](https://github.com/user-attachments/assets/5265611b-86bf-4500-be7f-4ab680f306a2)
+![微信图片_20241121154900](https://github.com/user-attachments/assets/ab4b9087-3543-4658-8bf2-e891b8919f50)
