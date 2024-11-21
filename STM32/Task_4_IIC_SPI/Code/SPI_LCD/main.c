@@ -96,8 +96,8 @@ int main(void)
   MX_GPIO_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
-	LCD_Init();
-	LCD_Fill(0,0,LCD_W,LCD_H,WHITE);
+  LCD_Init();
+  LCD_Fill(0,0,LCD_W,LCD_H,WHITE);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -107,7 +107,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	LCD_ShowPicture(55,56,128,128,pic);
+  LCD_ShowPicture(55,56,128,128,pic);
   }
   /* USER CODE END 3 */
 }

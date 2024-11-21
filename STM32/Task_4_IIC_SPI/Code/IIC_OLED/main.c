@@ -94,8 +94,8 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-	OLED_Init();
-	OLED_Clear();
+  OLED_Init();
+  OLED_Clear();
 	
 	
 	
@@ -108,8 +108,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		OLED_ShowChinese(25,4,6);
-		OLED_ShowChinese(75,4,7);
+	OLED_ShowChinese(25,4,6);
+	OLED_ShowChinese(75,4,7);
   }
   /* USER CODE END 3 */
 }
