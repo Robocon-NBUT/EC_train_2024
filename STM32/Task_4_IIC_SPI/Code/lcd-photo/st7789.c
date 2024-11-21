@@ -745,3 +745,19 @@ void ST7789_Test(void)
 	ST7789_DrawImage(0, 0, 128, 128, (uint16_t *)saber);
 	HAL_Delay(3000);
 }
+void LCD_ShowPicture(uint16_t x,uint16_t y,uint16_t length,uint16_t width,const uint16_t pic[])
+{
+    uint16_t i,j;
+    uint32_t k=0;
+    ST7789_SetAddressWindow(x,y,x+length-1,y+width-1);
+    for(i=0;i<length;i++)
+    {
+        for(j=0;j<width;j++)
+        {
+            ST7789_WriteSmallData(pic[k*2]);
+            ST7789_WriteSmallData(pic[k*2+1]);
+            k++;
+        }
+    }           
+}
+
