@@ -412,17 +412,31 @@ void ST7789_DrawCircle(uint16_t x0, uint16_t y0, uint8_t r, uint16_t color)
  */
 void ST7789_DrawImage(uint16_t x, uint16_t y, uint16_t w, uint16_t h, const uint16_t *data)
 {
-	if ((x >= ST7789_WIDTH) || (y >= ST7789_HEIGHT))
-		return;
-	if ((x + w - 1) >= ST7789_WIDTH)
-		return;
-	if ((y + h - 1) >= ST7789_HEIGHT)
-		return;
+    if ((x >= ST7789_WIDTH) || (y >= ST7789_HEIGHT))
+        return;
+    if ((x + w - 1) >= ST7789_WIDTH)
+        w = ST7789_WIDTH - x;
+    if ((y + h - 1) >= ST7789_HEIGHT)
+        h = ST7789_HEIGHT - y;
 
-	ST7789_Select();
-	ST7789_SetAddressWindow(x, y, x + w - 1, y + h - 1);
-	ST7789_WriteData((uint8_t *)data, sizeof(uint16_t) * w * h);
-	ST7789_UnSelect();
+    ST7789_Select();
+    ST7789_SetAddressWindow(x, y, x + w - 1, y + h - 1);
+
+    // 遍历数据数组，按行逐个发送像素数据
+    for (uint16_t row = 0; row < h; row++) {
+        for (uint16_t col = 0; col < w; col++) {
+            uint32_t index = row * w + col;
+            uint16_t pixel = data[index];
+
+            // 交换字节，如果需要的话
+            uint16_t pixel_swapped = (pixel >> 8) | (pixel << 8);
+
+            // 发送像素数据
+            ST7789_WriteData((uint8_t *)&pixel_swapped, sizeof(uint16_t));
+        }
+    }
+
+    ST7789_UnSelect();
 }
 
 /**
@@ -751,4 +765,22 @@ void ST7789_Test(void)
 	ST7789_Fill_Color(WHITE);
 	ST7789_DrawImage(0, 0, 128, 128, (uint16_t *)saber);
 	HAL_Delay(3000);
+}
+
+
+	
+
+void LCD_ShowPicture(uint16_t x,uint16_t y,uint16_t length,uint16_t width,const uint16_t pic[])
+{
+uint16_t i,j;
+uint32_t k=0;
+ST7789_SetAddressWindow(x,y,x+length-1,y+width-1);
+for(i=0;i<length;i++)
+{
+for(j=0;j<width;j++){
+ST7789_WriteSmallData(pic[k*2]);
+ST7789_WriteSmallData(pic[k*2+1]);
+k++;
+}
+}
 }
