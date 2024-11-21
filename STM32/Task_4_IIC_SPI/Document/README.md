@@ -23,3 +23,10 @@
 ## 任务要求
  - 在oled屏幕上显示 姓名 50%
  - 在lcd屏幕上显示qq头像 50%
+
+https://github.com/user-attachments/assets/0f85a1ca-8d82-4aca-b511-67227fdca72c
+
+
+
+https://github.com/user-attachments/assets/fdc246e7-4225-4002-bb5d-aa84335049d6
+
