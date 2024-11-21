@@ -68,11 +68,17 @@ OLED有四个接口，VCC —— 电源3v3
 基本信号线：
 
 1 · MOSI（Master Out Slave In）：主设备数据输出，从设备数据输入
+
 2 · MISO（Master In Slave Out）：主设备数据输入，从设备数据输出
+
 3 · SCLK（Serial Clock）：时钟信号，由主设备产生
+
 4 · CS（Chip Select）：从设备片选信号，由主设备控制，低电平有效
+
 5 · DC（Direct Current）：直流电
+
 6 · RW (Read/Write) : 读取和修改文件
+
 7 · RST(Reset) : 是复位信号，用于将设备或系统恢复到初始状态
 
 <br/>
