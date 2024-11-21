@@ -51,3 +51,14 @@ LCD:
 5. 取模，高位在前，输出灰度256（如果你的图片特别复杂的话，太高了无法输出，不过256的图片会很黄）
 6. 在fonts.h里面声明
 7. 在main.c中调用函数
+
+> ## 视频-oled-name：
+
+
+https://github.com/user-attachments/assets/5b94fc71-44f0-4e0c-baa4-3e57c86ca514
+
+> ## 视频-lcd-photo：
+
+
+https://github.com/user-attachments/assets/a29b1a47-48f3-46e5-86a9-64de141da323
+
