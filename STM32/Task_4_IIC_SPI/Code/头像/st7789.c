@@ -162,32 +162,7 @@ void ST7789_Fill_Color(uint16_t color)
 	
 	ST7789_UnSelect();
 }
-/*
-void ST7789_DrawImage(uint16_t x, uint16_t y, uint16_t w, uint16_t h, const uint16_t *data)
-{
-    if ((x >= ST7789_WIDTH) || (y >= ST7789_HEIGHT))
-        return;
-    if ((x + w - 1) >= ST7789_WIDTH)
-        return;
-    if ((y + h - 1) >= ST7789_HEIGHT)
-        return;
 
-    ST7789_Select();
-    ST7789_SetAddressWindow(x, y, x + w - 1, y + h - 1);
-
-   
-    for (uint16_t row = 0; row < h; row++) {
-        for (uint16_t col = 0; col < w; col++) {
-           
-            uint32_t index = row * w + col;
-
-            ST7789_WriteData((uint8_t *)&data[index], sizeof(uint16_t));
-        }
-    }
-
-    ST7789_UnSelect();
-}
-*/
 
 void LCD_ShowPicture(uint16_t x,uint16_t y,uint16_t length,uint16_t width,const uint16_t pic[])
 {
