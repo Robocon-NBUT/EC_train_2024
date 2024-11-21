@@ -17,4 +17,4 @@
 
 硬件抽象层（HAL）的重要性：在一些微控制器平台（如STM32）中，使用硬件抽象层可以简化SPI的配置和使用，提高开发效率。
 
-持续学习：SPI是一个不断发展的领域，新的设备和协议变种不断出现。持续学习和实践是保持技能更新的关键。[readm1.md](https://github.com/user-attachments/files/17846716/readm1.md)
+持续学习：SPI是一个不断发展的领域，新的设备和协议变种不断出现。持续学习和实践是保持技能更新的关键。![134f10eeb0a3f270c7217c913e52df8](https://github.com/user-attachments/assets/090b8d77-bf6b-4b65-913a-299c1513a1a1)
