@@ -82,3 +82,9 @@ OLED有四个接口，VCC —— 电源3v3
 改成8—Bits       传输速度改为HIGH        要额外设置三个GPIO引脚output来连接剩下的串口
 
 还是要把驱动文件放入CORE文件夹中，再对图片进行16位色彩的取模，正常输出图像
+
+![580718be72ba6d8d771f10f9deaffe5a](https://github.com/user-attachments/assets/0286f22f-2cd0-43ac-a6e7-80cb20a9c09e)
+
+![a243e62dbbd4be91e53b4845cae1d4ea](https://github.com/user-attachments/assets/0d03e50a-3899-4f83-b5f8-5766bda08ffa)
+
+
