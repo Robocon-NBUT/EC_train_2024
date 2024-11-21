@@ -57,8 +57,9 @@ LCD:
 
 https://github.com/user-attachments/assets/5b94fc71-44f0-4e0c-baa4-3e57c86ca514
 
-> ## 视频-lcd-photo：
+> ## 照片-lcd-photo：
+
+![微信图片_20241121201852](https://github.com/user-attachments/assets/ae30fb60-e239-463d-a5cc-a2e48d60e3ad)
 
 
-https://github.com/user-attachments/assets/a29b1a47-48f3-46e5-86a9-64de141da323
 
