@@ -83,4 +83,5 @@ MISO 线主要负责实现数据从 SPI 总线的从设备传输到主设备。�
 数据传输：
 主设备拉低 SS 线开启通信，在 SCLK 第一个下降沿前，主设备将 MSB 放在 MOSI 线上，下降沿时从设备采样 MOSI 数据、主设备采样 MISO 数据，之后在上升沿双方                                                                                                            
 准备下一位数据，按此节奏完成 1 字节数据传输，按要求处理应答，结束通信时主设备拉高 SS 线。
-### 
+### ![4f3a5a97bec4b947e1bfb4de30f73f0](https://github.com/user-attachments/assets/212d455e-b11c-4150-abbb-c7b9319cf68e)
+![0740302a5e7a02f6bcb8b81055c9535](https://github.com/user-attachments/assets/397d83f8-750b-471e-9282-5670ba44b314)
