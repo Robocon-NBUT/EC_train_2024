@@ -11,3 +11,11 @@
        - RST复位设备。
   - 心得
        - 本次任务比较难研究了好久才有大约的思路通过这次任务我了解到自我学习的能力依然有待加强，原先搜出来的驱动会使显示出来的图片呈蓝色后来改过新的终于完成了
+       - 
+
+https://github.com/user-attachments/assets/026acef1-d052-4913-8726-5a16aeab84e5
+
+
+
+https://github.com/user-attachments/assets/06844061-e486-483f-8fc7-c4e0bdefdcd8
+
