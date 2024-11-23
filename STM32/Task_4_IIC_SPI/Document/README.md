@@ -19,10 +19,3 @@ MOSI： 主设备输出/从设备输入引脚。该引脚在主模式下发送�
 SCLK：串行时钟信号，由主设备产生。
 CS/SS：从设备片选信号，由主设备控制。它的功能是用来作为“片选引脚”，也就是选择指定的从设备，让主设备可以单独地与特定从设备通讯，避免数据线上的冲突。
 
-
-https://github.com/user-attachments/assets/f0d7805d-c5db-478d-8588-466a8521f65f
-
-
-
-https://github.com/user-attachments/assets/eddcbc33-90c8-4db5-beb2-a0fba22d4818
-
