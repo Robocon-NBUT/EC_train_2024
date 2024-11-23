@@ -24,5 +24,9 @@ CS/SS：从设备片选信号，由主设备控制。它的功能是用来作为
 https://github.com/user-attachments/assets/79f501c2-2632-4d86-a1ee-1649b9cbe21c
 
 
-https://github.com/user-attachments/assets/b542780e-256c-40ea-be9d-89c6adf7deff
+
+
+https://github.com/user-attachments/assets/9976cbf9-701e-4d08-894c-85da43a7218e
+
+
 
