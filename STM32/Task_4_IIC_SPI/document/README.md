@@ -18,4 +18,5 @@ MISO（Master In Slave Out）：主输入从输出线，从设备发送数据到
 CS/SS（Chip Select/Slave Select）：片选线/从设备选择线，主设备用来选择特定从设备的信号线，低电平有效。
 
 ![07d5f12ae21f621206bcf9a92303af0f](https://github.com/user-attachments/assets/3e68b6b4-036c-4c0d-8722-24fc34e6933f)
-![Uploading 72ab08eae4a57289b5f5453f72f308cb.png…]()
+
+![72ab08eae4a57289b5f5453f72f308cb](https://github.com/user-attachments/assets/d8de2150-724f-48c8-9701-fe97407fae49)
