@@ -1,3 +1,3 @@
 在 STM32 的 IIC 和 SPI 模块自学从理论概念的晦涩难懂，到反复琢磨资料、查看例程，一点点搭建电路、编写代码这过程有困惑，有焦虑，但坚持下来，收获的不仅是知识与技能，更是面对难题时的耐心与决心，让我对未来的专业学习充满信心与期待。
-![Uploading 微信图片_20241124222339.jpg…]()
-![Uploading 微信图片_20241124222420.jpg…]()
+![微信图片_20241124222339](https://github.com/user-attachments/assets/46143e5c-d526-46c9-a5ba-2e13f8d48d02)
+![微信图片_20241124222420](https://github.com/user-attachments/assets/b1ae0144-b676-499c-ad46-e5cbbf4fc017)
