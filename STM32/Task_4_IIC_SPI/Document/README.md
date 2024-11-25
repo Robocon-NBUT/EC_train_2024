@@ -22,4 +22,5 @@
 整个学习过程让我明白，只要有毅力，技术难题总会被攻克。
   -
 ![名字](https://github.com/user-attachments/assets/a5728bf7-9d81-45c4-83b1-f3cdb451f125)
-![头像](https://github.com/user-attachments/assets/1c091ac2-5657-4b7b-a340-d99560e6fc7f)
+
+![头像 (2)](https://github.com/user-attachments/assets/533bd93b-dc93-4c32-ac07-38f4a8bacc7b)
