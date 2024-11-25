@@ -209,7 +209,7 @@ void ST7789_Test(void)
 {
 	//ST7789_Fill_Color(WHITE);
 
-	LCD_ShowPicture(0, 0, 60, 60, (uint16_t *)saber);
+	LCD_ShowPicture(0, 0, 150, 150, (uint16_t *)saber);
 	
 	//HAL_Delay(3000);
 }
