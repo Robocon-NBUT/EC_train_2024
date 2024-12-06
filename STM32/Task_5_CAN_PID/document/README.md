@@ -12,3 +12,6 @@ PID：
 
 心得：
 这次作业有难度，自己一个人很难完成，而且没什么头绪，找了许多资料还是不能使电机转起来，还是在其他伙伴的帮助才成功了
+
+https://github.com/user-attachments/assets/a3e1dbfe-53e2-4c0e-8860-21df259eccd4
+
