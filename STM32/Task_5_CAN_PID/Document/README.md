@@ -26,4 +26,16 @@ KD:
 can和pid是常用的控制方式，pid的算法可以说很妙，但是一开始看公式有点难以理解。can的发送函数也较为难懂，数据较复杂，不过这也是can传输的稳定性好，抗干扰的秘密
 
 ## 视频
+> 速度环：
+
+
+https://github.com/user-attachments/assets/4d97029d-630e-4743-b168-3097c07d6d73
+
+
+> 位置环：
+
+
+https://github.com/user-attachments/assets/379c69ba-6f4b-495a-aa53-b107c58465cb
+
+
 
