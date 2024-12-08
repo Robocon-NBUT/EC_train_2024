@@ -29,3 +29,10 @@ PID控制是一种在工业控制应用中广泛使用的反馈回路部件，�
     KP（比例增益）：比例增益决定了比例项对控制输出的影响程度。
     KI（积分增益）：积分增益用于消除稳态误差，通过累积误差随时间的积分来调整控制输出。
     KD（微分增益）：微分增益用于预测误差的趋势，通过误差的变化率来调整控制输出
+
+https://github.com/user-attachments/assets/881e99c1-ca12-4f28-b4cf-2035921eebda
+
+
+
+https://github.com/user-attachments/assets/ec1ea5c0-7aed-4a25-b067-3dc20a50997e
+
