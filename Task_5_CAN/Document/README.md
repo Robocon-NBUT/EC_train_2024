@@ -25,6 +25,10 @@ CAN 使用两根信号线（CAN_H 和 CAN_L），通过它们之间的电压差�
 
 
 
+https://github.com/user-attachments/assets/65985c8d-52ed-4223-b21b-fbeff6b2d98b
+
+
+
 
 
 
