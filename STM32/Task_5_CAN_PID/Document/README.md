@@ -24,3 +24,7 @@
 >学习总结
 - 这次任务难度高,本次学习围绕CAN和PID展开。在CAN方面，了解了什么是CAN总线，包括其涉及的TTL电平、差分信号、H、L、120欧终端电阻和波特率等概念，还学习了在STM32中配置CAN总线，并使用STM32控制m2006电机启动。对于PID，主要学习了PID算法及其参数KP、KI、KD，重点是使用PID算法实现m2006电机的速度控制。通过学习，对CAN和PID的理论与实践有了较全面的认识。
   -
+
+
+https://github.com/user-attachments/assets/4a12a19b-bfd3-44d0-bd2d-71cf87fcdfe3
+
