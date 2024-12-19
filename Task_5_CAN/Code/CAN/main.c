@@ -18,7 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "i2c.h"
+#include "fdcan.h"
 #include "memorymap.h"
 #include "gpio.h"
 
@@ -29,8 +29,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#include "oled.h"
-#include "BMP.h"
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -58,7 +57,49 @@ static void MPU_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void CAN_Open(FDCAN_HandleTypeDef *can)
+{
+  FDCAN_FilterTypeDef filter;                    //< 声明局部变量 can过滤器结构体
+  filter.IdType = FDCAN_STANDARD_ID;             //< id设置为标准id
+  filter.FilterIndex = 0;                        //< 设值筛选器的编号，标准id选择0-127
+  filter.FilterType = FDCAN_FILTER_MASK;         //< 设置工作模式为掩码模式
+  filter.FilterConfig = FDCAN_FILTER_TO_RXFIFO0; //< 将经过过滤的数据存储到 fifo0
+  filter.FilterID1 = 0x200;                      //< 筛选器的id
+  filter.FilterID2 = 0x200;
 
+  HAL_FDCAN_ConfigFilter(can, &filter);                                  //< 配置过滤器
+  HAL_FDCAN_Start(can);                                          
+  HAL_FDCAN_ActivateNotification(can, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0); // 使能fifo0接收到新信息中断
+}
+
+
+void motor_speed(int16_t motor1, int16_t motor2, int16_t motor3, int16_t motor4)
+{
+
+  FDCAN_TxHeaderTypeDef txHeader;
+  uint8_t txData[8];
+  txHeader.Identifier =(uint32_t)0x200;
+  txHeader.IdType = FDCAN_STANDARD_ID;
+  txHeader.TxFrameType = FDCAN_DATA_FRAME;
+  txHeader.DataLength = FDCAN_DLC_BYTES_8;
+  txHeader.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
+  txHeader.BitRateSwitch = FDCAN_BRS_OFF;
+  txHeader.FDFormat = FDCAN_CLASSIC_CAN;
+  txHeader.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
+  txHeader.MessageMarker = 0x00;
+
+  txData[0] = motor1 >> 8;
+  txData[1] = motor1;
+  txData[2] = motor2 >> 8;
+  txData[3] = motor2;
+  txData[4] = motor3 >> 8;
+  txData[5] = motor3;
+  txData[6] = motor4 >> 8;
+  txData[7] = motor4;
+
+  HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &txHeader, txData);
+
+}
 /* USER CODE END 0 */
 
 /**
@@ -93,39 +134,20 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_I2C1_Init();
+  MX_FDCAN1_Init();
   /* USER CODE BEGIN 2 */
-OLED_Init();
-OLED_Clear();
-unsigned char t;
-t=' ';
-OLED_ShowString(0,6,"Hello",16);
+  CAN_Open(&hfdcan1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		OLED_Clear ();
-		OLED_ShowCHinese (0,0,0);
-		OLED_ShowCHinese (18,0,1);
-		OLED_ShowCHinese (36,0,2);
-		OLED_ShowCHinese (54,0,3);
-		OLED_ShowCHinese (72,0,4);
-		OLED_ShowCHinese (90,0,5);
-		
-//		OLED_ShowString (6,3,"0.96 OLED code", 16);
-//    OLED_ShowString (0,6, "ASIC:",16);
-//    OLED_ShowString(63,6, "code:", 16);
-//    OLED_ShowChar (48,6,t, 16); 
-//    t++; 
-//    if(t>'~') t=' '; 
-//    OLED_ShowNum(103,6, t,3, 16); 
-    HAL_Delay(1000000);
+		motor_speed(1000,0,0,0);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-  }
+   }
   /* USER CODE END 3 */
 }
 
@@ -144,17 +166,30 @@ void SystemClock_Config(void)
 
   /** Configure the main internal regulator output voltage
   */
-  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE3);
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+
+  while(!__HAL_PWR_GET_FLAG(PWR_FLAG_VOSRDY)) {}
+
+  __HAL_RCC_SYSCFG_CLK_ENABLE();
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE0);
 
   while(!__HAL_PWR_GET_FLAG(PWR_FLAG_VOSRDY)) {}
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
-  RCC_OscInitStruct.HSIState = RCC_HSI_DIV1;
-  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLM = 5;
+  RCC_OscInitStruct.PLL.PLLN = 192;
+  RCC_OscInitStruct.PLL.PLLP = 2;
+  RCC_OscInitStruct.PLL.PLLQ = 8;
+  RCC_OscInitStruct.PLL.PLLR = 2;
+  RCC_OscInitStruct.PLL.PLLRGE = RCC_PLL1VCIRANGE_2;
+  RCC_OscInitStruct.PLL.PLLVCOSEL = RCC_PLL1VCOWIDE;
+  RCC_OscInitStruct.PLL.PLLFRACN = 0;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -165,15 +200,15 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2
                               |RCC_CLOCKTYPE_D3PCLK1|RCC_CLOCKTYPE_D1PCLK1;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.SYSCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.AHBCLKDivider = RCC_HCLK_DIV1;
-  RCC_ClkInitStruct.APB3CLKDivider = RCC_APB3_DIV1;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_HCLK_DIV2;
+  RCC_ClkInitStruct.APB3CLKDivider = RCC_APB3_DIV2;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_APB1_DIV2;
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_APB2_DIV1;
-  RCC_ClkInitStruct.APB4CLKDivider = RCC_APB4_DIV1;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_APB2_DIV2;
+  RCC_ClkInitStruct.APB4CLKDivider = RCC_APB4_DIV2;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
   {
     Error_Handler();
   }
